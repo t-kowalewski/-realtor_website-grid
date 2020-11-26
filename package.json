@@ -1,0 +1,31 @@
+{
+  "name": "realtor-website-grid",
+  "version": "1.0.0",
+  "description": "Realtor demo website - CSS Grid",
+  "main": "index.js",
+  "scripts": {
+    "watch-sass": "node-sass-chokidar sass/main.scss css/style.css -w --recursive --skip-initial",
+    "compile-sass": "node-sass-chokidar sass/main.scss css/style.comp.css",
+    "prefix-css": "postcss css/style.comp.css --use autoprefixer -o css/style.prefix.css",
+    "compress-css": "node-sass-chokidar css/style.prefix.css css/style.css --output-style compressed",
+    "build-css": "npm-run-all compile-sass prefix-css compress-css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t-kowalewski/realtor_website-grid.git"
+  },
+  "author": "Tony Kowalewski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/t-kowalewski/realtor_website-grid/issues"
+  },
+  "homepage": "https://github.com/t-kowalewski/realtor_website-grid#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.0.2",
+    "node-sass": "^5.0.0",
+    "node-sass-chokidar": "^1.5.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.10",
+    "postcss-cli": "^8.3.0"
+  }
+}
