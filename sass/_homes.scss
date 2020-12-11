@@ -1,6 +1,45 @@
 .homes {
-  background-color: $color-secondary;
+  margin: 15rem 0;
 
   grid-row: 4 / 5;
   grid-column: center-start / center-end;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 7rem;
+
+  // Home - Card
+  &__card {
+    background-color: $color-grey-light-1;
+
+    &-img {
+      width: 100%;
+    }
+
+    &-icon {
+      fill: $color-primary;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &-title {
+
+    }
+
+    &-location,
+    &-rooms,
+    &-area,
+    &-price {
+
+      svg {
+        fill: $color-primary;
+        width: 2rem;
+        height: 2rem;
+      }
+
+      p {
+
+      }
+    }
+  }
 }
