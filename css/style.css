@@ -8,6 +8,9 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: "Nunito", sans-serif;
@@ -19,6 +22,10 @@ body {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  @media only screen and (max-width: 62.5em) {
+    .container {
+      grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+      grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }
 
 .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
@@ -83,6 +90,10 @@ body {
   grid-column: sidebar-start / sidebar-end;
   display: flex;
   justify-content: center; }
+  @media only screen and (max-width: 62.5em) {
+    .sidebar {
+      grid-row: 1 / 2;
+      grid-column: 1 / -1; } }
 
 .nav-btn {
   border: none;
@@ -111,11 +122,10 @@ body {
   background-size: cover;
   background-position: center;
   padding: 4rem 8rem;
-  grid-row: 1 / 2;
   grid-column: full-start / col-end 6;
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
-  grid-template-columns: max-content;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
   gap: 1.5rem;
   justify-content: center; }
   .header__logo {
@@ -139,15 +149,17 @@ body {
   .header__seenon-logos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    justify-items: center; }
+    gap: 3rem;
+    justify-items: center;
+    align-items: center; }
     .header__seenon-logos img {
-      height: 2.5rem;
+      max-height: 2.5rem;
+      max-width: 100%;
       filter: brightness(70%); }
 
 .realtors {
   background-color: #101d2c;
   padding: 3rem;
-  grid-row: 1 / 2;
   grid-column: col-start 7 / full-end;
   display: flex;
   flex-direction: column;
@@ -170,7 +182,6 @@ body {
     margin-top: -3px; }
 
 .features {
-  grid-row: 2 / 3;
   grid-column: center-start / center-end;
   margin: 15rem 0;
   display: grid;
@@ -193,7 +204,6 @@ body {
 
 .story__pictures {
   background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
-  grid-row: 3 / 4;
   grid-column: full-start / col-end 4;
   display: grid;
   grid-template-rows: repeat(6, 1fr);
@@ -215,7 +225,6 @@ body {
 
 .story__content {
   background-color: #f9f7f6;
-  grid-row: 3 / 4;
   grid-column: col-start 5 / full-end;
   padding: 6rem 8vw;
   display: flex;
@@ -230,7 +239,6 @@ body {
 
 .homes {
   margin: 15rem 0;
-  grid-row: 4 / 5;
   grid-column: center-start / center-end;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -288,7 +296,6 @@ body {
 
 .gallery {
   background-color: #f9f7f6;
-  grid-row: 5 / 6;
   grid-column: full-start / full-end;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -345,7 +352,6 @@ body {
 .footer {
   background-color: #101d2c;
   padding: 8rem;
-  grid-row: 6 / -1;
   grid-column: full-start / full-end; }
 
 .nav {
