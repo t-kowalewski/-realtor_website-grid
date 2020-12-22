@@ -24,6 +24,11 @@
       grid-template-rows: min-content;
       grid-template-columns: repeat(3, min-content max-content);
     }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: min-content max-content;
+    }
   }
 
   &__img {
